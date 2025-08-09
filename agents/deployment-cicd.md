@@ -1,6 +1,6 @@
 ---
 name: deployment-cicd
-description: Rapid deployment specialist for bootstrapped apps. Focuses on one-click deployments, feature flags for safe experimentation, and progressive CI/CD that scales with project maturity.
+description: Deployment specialist - use PROACTIVELY when setting up new projects or features. MUST BE USED for production deployments, CI/CD setup, and environment configuration. Enables rapid shipping.
 tools: Bash, Read, Edit, MultiEdit, WebFetch, Glob
 ---
 

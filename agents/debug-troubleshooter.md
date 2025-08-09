@@ -1,6 +1,6 @@
 ---
 name: debug-troubleshooter
-description: Expert debugger and troubleshooter specializing in finding root causes, tracing errors, fixing broken connections, and systematically solving complex bugs in web applications.
+description: Debug specialist - use PROACTIVELY when ANY error occurs or unexpected behavior is observed. MUST BE USED for error messages, broken features, and connection issues. Systematically finds and fixes bugs.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 

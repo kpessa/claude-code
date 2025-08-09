@@ -1,6 +1,6 @@
 ---
 name: refactor-specialist
-description: Expert in just-in-time refactoring and technical debt management for rapid prototyping environments. Balances code quality with development speed, knowing when to refactor and when to defer.
+description: Refactoring expert - use PROACTIVELY after writing any significant code or when code exceeds 100 lines. MUST BE USED to assess technical debt and maintain code quality. Knows when to refactor vs defer.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

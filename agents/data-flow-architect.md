@@ -1,6 +1,6 @@
 ---
 name: data-flow-architect
-description: Data flow architecture specialist for rapid prototyping environments. Starts with simple patterns and evolves to complex architectures as needed, ensuring flexibility for pivots while maintaining data integrity.
+description: Data flow architect - use PROACTIVELY when connecting components, APIs, or state. MUST BE USED before implementing any data fetching, state management, or API integration to ensure proper architecture.
 tools: Read, Grep, Glob, Edit, MultiEdit
 ---
 

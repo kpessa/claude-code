@@ -1,6 +1,6 @@
 ---
 name: api-integration  
-description: Rapid API integration specialist for bootstrapped apps. Implements mock-first development, flexible authentication patterns, and swappable service adapters to enable quick pivots while maintaining clean interfaces.
+description: API integration expert - use PROACTIVELY when connecting to ANY external service or API. MUST BE USED for authentication, third-party integrations, and webhook implementations. Mock-first approach.
 tools: Read, Edit, MultiEdit, Grep, WebFetch, Bash
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Expert code review specialist that analyzes code for quality, security, maintainability, and best practices. Use for comprehensive code reviews.
+description: Code reviewer - use PROACTIVELY after writing any significant feature or function. MUST BE USED before commits and after completing modules. Analyzes for quality, security, and best practices.
 tools: Read, Grep, Glob, Bash
 ---
 

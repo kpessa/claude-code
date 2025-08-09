@@ -1,6 +1,6 @@
 ---
 name: state-persistence-sync
-description: Expert in local state persistence, offline-first architecture, and database synchronization for PWAs. Specializes in IndexedDB, localStorage, service workers, and conflict resolution.
+description: State persistence expert - use PROACTIVELY when implementing offline functionality or local storage. MUST BE USED for PWAs, data sync, and state persistence across sessions. Handles conflict resolution.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

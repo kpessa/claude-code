@@ -1,6 +1,6 @@
 ---
 name: testing-qa
-description: Pragmatic testing specialist for rapid prototyping environments. Focuses on testing what matters most for the current phase, implementing smoke tests for prototypes and comprehensive testing only when stabilizing.
+description: Testing specialist - use PROACTIVELY after implementing any feature or critical path. MUST BE USED to write tests for user-facing functionality and API endpoints. Implements phase-appropriate testing.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

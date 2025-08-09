@@ -1,6 +1,6 @@
 ---
 name: performance-optimizer
-description: Progressive performance optimization specialist who knows when "good enough" is perfect for prototypes and when to optimize for scale. Balances performance with development speed based on project phase.
+description: Performance optimizer - use PROACTIVELY when bundle size exceeds 500KB or load time exceeds 3s. MUST BE USED before production deployments and when users report slowness. Implements quick wins first.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 
