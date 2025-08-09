@@ -1,0 +1,54 @@
+# Claude Internal Directories
+/ide/
+/projects/
+/shell-snapshots/
+/statsig/
+/todos/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Sensitive or personal data
+*.secret
+*.private
+
+# Cache directories
+cache/
+.cache/
+
+# Node modules (if any future extensions use them)
+node_modules/
+
+# Python (if any future scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+
+# IDE files (in case you edit outside Claude)
+.vscode/
+.idea/
+*.sublime-*
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Archive files (usually not needed in git)
+*.zip
+*.tar.gz
+*.rar
