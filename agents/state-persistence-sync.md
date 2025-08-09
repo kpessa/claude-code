@@ -1,6 +1,6 @@
 ---
 name: state-persistence-sync
-description: State persistence expert - use PROACTIVELY when implementing offline functionality or local storage. MUST BE USED for PWAs, data sync, and state persistence across sessions. Handles conflict resolution.
+description: State persistence expert - Consider during planning of offline strategies and data persistence architecture. Deploy for execution when implementing offline functionality, PWAs, local storage, or data sync across sessions. Handles conflict resolution.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

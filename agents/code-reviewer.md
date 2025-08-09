@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Code reviewer - use PROACTIVELY after writing any significant feature or function. MUST BE USED before commits and after completing modules. Analyzes for quality, security, and best practices.
+description: Code reviewer - Consider during planning of code quality standards and review processes. Deploy for execution after writing significant features, before commits, or when completing modules. Analyzes for quality, security, and best practices.
 tools: Read, Grep, Glob, Bash
 ---
 

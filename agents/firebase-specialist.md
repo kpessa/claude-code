@@ -1,6 +1,6 @@
 ---
 name: firebase-specialist
-description: Firebase expert specializing in Authentication, Firestore, Realtime Database, Cloud Functions, Storage, and all Firebase services for web applications.
+description: Firebase specialist - Consider during planning of backend architecture and Firebase service selection. Deploy for execution when implementing Firebase Authentication, Firestore, Realtime Database, Cloud Functions, Storage, or any Firebase services.
 tools: Read, Edit, MultiEdit, Grep, Glob, WebFetch, Bash
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: debug-troubleshooter
-description: Debug specialist - use PROACTIVELY when ANY error occurs or unexpected behavior is observed. MUST BE USED for error messages, broken features, and connection issues. Systematically finds and fixes bugs.
+description: Debug specialist - Consider during planning when anticipating error scenarios and debugging strategies. Deploy for execution when errors occur, features break, or unexpected behavior is observed. Systematically finds and fixes bugs.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 

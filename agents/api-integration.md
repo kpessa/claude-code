@@ -1,6 +1,6 @@
 ---
 name: api-integration  
-description: API integration expert - use PROACTIVELY when connecting to ANY external service or API. MUST BE USED for authentication, third-party integrations, and webhook implementations. Mock-first approach.
+description: API integration expert - Consider during planning of external service architecture and integration patterns. Deploy for execution when connecting to APIs, implementing authentication, third-party services, or webhooks. Uses mock-first approach.
 tools: Read, Edit, MultiEdit, Grep, WebFetch, Bash
 ---
 

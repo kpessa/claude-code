@@ -1,6 +1,6 @@
 ---
 name: deployment-cicd
-description: Deployment specialist - use PROACTIVELY when setting up new projects or features. MUST BE USED for production deployments, CI/CD setup, and environment configuration. Enables rapid shipping.
+description: Deployment specialist - Consider during planning of deployment strategies and CI/CD architecture. Deploy for execution when setting up new projects, configuring production deployments, or implementing CI/CD pipelines. Enables rapid shipping.
 tools: Bash, Read, Edit, MultiEdit, WebFetch, Glob
 ---
 

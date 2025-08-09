@@ -1,6 +1,6 @@
 ---
 name: ui-ux-accessibility
-description: UI/UX specialist - use PROACTIVELY when designing ANY user interface or interaction. MUST BE USED for form design, navigation structure, and user flow decisions. Ensures functional, coherent design.
+description: UI/UX specialist - Consider during planning of user interfaces and interaction patterns. Deploy for execution when designing forms, navigation structures, user flows, or any interface elements. Ensures functional, coherent design.
 tools: Read, Edit, Grep, Glob, WebFetch, Bash
 ---
 

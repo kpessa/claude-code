@@ -1,6 +1,6 @@
 ---
 name: refactor-specialist
-description: Refactoring expert - use PROACTIVELY after writing any significant code or when code exceeds 100 lines. MUST BE USED to assess technical debt and maintain code quality. Knows when to refactor vs defer.
+description: Refactoring expert - Consider during planning when assessing technical debt and code quality. Deploy for execution when code exceeds 100 lines, shows complexity, or needs quality improvements. Knows when to refactor vs defer.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

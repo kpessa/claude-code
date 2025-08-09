@@ -1,6 +1,6 @@
 ---
 name: react-developer  
-description: React and Next.js expert - use PROACTIVELY when building any React components or features. MUST BE USED for component creation, state management decisions, and React architecture. Specializes in rapid prototyping and scaling.
+description: React and Next.js expert - Consider during planning of component architecture and state management strategies. Deploy for execution when building React components, implementing hooks, or making architectural decisions. Specializes in rapid prototyping and scaling.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 

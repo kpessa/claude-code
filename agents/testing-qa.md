@@ -1,6 +1,6 @@
 ---
 name: testing-qa
-description: Testing specialist - use PROACTIVELY after implementing any feature or critical path. MUST BE USED to write tests for user-facing functionality and API endpoints. Implements phase-appropriate testing.
+description: Testing specialist - Consider during planning of testing strategies and coverage. Deploy for execution after implementing features, critical paths, user-facing functionality, or API endpoints. Implements phase-appropriate testing.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash
 ---
 

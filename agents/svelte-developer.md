@@ -1,6 +1,6 @@
 ---
 name: svelte-developer
-description: Svelte and SvelteKit expert specializing in reactive programming, stores, component architecture, SSR/SSG, and Svelte-specific optimizations.
+description: Svelte and SvelteKit expert - Consider during planning of reactive component architecture and performance strategies. Deploy for execution when building Svelte applications, implementing stores, reactive programming patterns, or SvelteKit SSR/SSG.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 

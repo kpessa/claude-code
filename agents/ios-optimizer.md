@@ -1,6 +1,6 @@
 ---
 name: ios-optimizer
-description: iOS and Safari specialist ensuring optimal iPhone/iPad experience, PWA capabilities, touch interactions, and Apple ecosystem integration.
+description: iOS optimization specialist - Consider during planning of mobile experience and PWA strategies. Deploy for execution when optimizing for iPhone/iPad, implementing PWA features, touch interactions, or Apple ecosystem integration.
 tools: Read, Edit, Grep, Glob, WebFetch, Bash
 ---
 

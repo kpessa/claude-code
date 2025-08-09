@@ -1,6 +1,6 @@
 ---
 name: data-flow-architect
-description: Data flow architect - use PROACTIVELY when connecting components, APIs, or state. MUST BE USED before implementing any data fetching, state management, or API integration to ensure proper architecture.
+description: Data flow architect - Consider during planning of system architecture and data flow patterns. Deploy for execution when implementing data fetching, state management, API integration, or component connections. Ensures proper data architecture.
 tools: Read, Grep, Glob, Edit, MultiEdit
 ---
 

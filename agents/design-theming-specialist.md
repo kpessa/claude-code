@@ -1,6 +1,6 @@
 ---
 name: design-theming-specialist
-description: Design and theming expert specializing in modern UI design, color systems, typography, animations, dark/light modes, and creating cohesive design systems.
+description: Design and theming expert - Consider during planning of visual design strategy and design systems. Deploy for execution when implementing UI themes, color systems, typography, animations, or dark/light modes. Creates cohesive design systems.
 tools: Read, Edit, MultiEdit, Grep, Glob, WebFetch
 ---
 

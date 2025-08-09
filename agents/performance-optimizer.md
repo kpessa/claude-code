@@ -1,6 +1,6 @@
 ---
 name: performance-optimizer
-description: Performance optimizer - use PROACTIVELY when bundle size exceeds 500KB or load time exceeds 3s. MUST BE USED before production deployments and when users report slowness. Implements quick wins first.
+description: Performance optimizer - Consider during planning of performance budgets and optimization strategies. Deploy for execution when bundle size exceeds 500KB, load time exceeds 3s, or before production deployments. Implements quick wins first.
 tools: Read, Edit, MultiEdit, Grep, Glob, Bash, WebFetch
 ---
 
