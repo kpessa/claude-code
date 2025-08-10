@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell.exe -c \"[console]::beep(1000,300)\""
+            "command": "afplay /System/Library/Sounds/Pop.aiff"
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell.exe -c \"[console]::beep(800,200); [console]::beep(1000,200); [console]::beep(1200,200)\""
+            "command": "afplay /System/Library/Sounds/Glass.aiff"
           }
         ]
       }
