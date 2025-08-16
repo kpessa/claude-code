@@ -20,6 +20,16 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/kpessa/.claude/type-check-hook.sh"
+          }
+        ]
+      }
     ]
   },
   "feedbackSurveyState": {
