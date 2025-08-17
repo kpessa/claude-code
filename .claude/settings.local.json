@@ -31,7 +31,8 @@
       "Bash(npm test:*)",
       "Bash(npm run test:unit:*)",
       "Bash(pnpm run lint:*)",
-      "Bash(do [ -f \"$dirreview.md\" ])"
+      "Bash(do [ -f \"$dirreview.md\" ])",
+      "WebFetch(domain:docs.claude.ai)"
     ],
     "deny": [],
     "additionalDirectories": [
