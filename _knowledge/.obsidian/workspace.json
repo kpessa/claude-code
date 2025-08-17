@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "1b4e3702bf51f620",
+    "type": "split",
+    "children": [
+      {
+        "id": "163c01c27b3f998b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b342e4d122f6ade9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Research/Agent-System-Deep-Dive-2024-01-16.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Agent-System-Deep-Dive-2024-01-16"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cdf1a9f9a6656fc2",
+    "type": "split",
+    "children": [
+      {
+        "id": "b083057874b7e7d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9d5efd490c5165f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "852486a3f4706d72",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "50040562d980c5df",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "28dbb2910b5055f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "c81d263ee5530301",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "050211748c841a67",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01-Research/Agent-System-Deep-Dive-2024-01-16.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Agent-System-Deep-Dive-2024-01-16"
+            }
+          },
+          {
+            "id": "fb66c5cb0bcea92f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01-Research/Agent-System-Deep-Dive-2024-01-16.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Agent-System-Deep-Dive-2024-01-16"
+            }
+          },
+          {
+            "id": "3cce1d3f46fcd29e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bdbe25d75c8175ac",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01-Research/Agent-System-Deep-Dive-2024-01-16.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Agent-System-Deep-Dive-2024-01-16"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b342e4d122f6ade9",
+  "lastOpenFiles": [
+    "01-Research/Agent-Transition-Analysis-2024-01-16.md",
+    "01-Research/Agent-System-Deep-Dive-2024-01-16.md",
+    "context.md",
+    "01-Research/Agent-Transition-Analysis-2024-01-16.md.tmp.41941.1755384147470"
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "b807536cc932bd55",
+    "type": "split",
+    "children": [
+      {
+        "id": "677ec2b81d6eab57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c438e03269edf30b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_knowledge/context.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "context"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bf81a1cac2f390db",
+    "type": "split",
+    "children": [
+      {
+        "id": "edff55cfba9dbfeb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "40eb1737f2c0e092",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7a271d4f206dedfa",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d5c159ac873271ef",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1e8bed4779865ae0",
+    "type": "split",
+    "children": [
+      {
+        "id": "5da40d4e5a40136e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a25417ef5b9510e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "agents/general-researcher.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for general-researcher"
+            }
+          },
+          {
+            "id": "9e76c49def7eb74a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "agents/general-researcher.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from general-researcher"
+            }
+          },
+          {
+            "id": "ad8dec7f0acea72e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "552e6c4605bf487b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "agents/general-researcher.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of general-researcher"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c438e03269edf30b",
+  "lastOpenFiles": [
+    "projects/-Users-kpessa--claude/04208a7e-b972-4305-91dd-8d580dcaca10.jsonl",
+    "shell-snapshots/snapshot-bash-1755395469800-bdf90v.sh",
+    "todos/04208a7e-b972-4305-91dd-8d580dcaca10-agent-04208a7e-b972-4305-91dd-8d580dcaca10.json.tmp.63322.1755395470100",
+    "todos/04208a7e-b972-4305-91dd-8d580dcaca10-agent-04208a7e-b972-4305-91dd-8d580dcaca10.json",
+    "todos/04208a7e-b972-4305-91dd-8d580dcaca10-agent-04208a7e-b972-4305-91dd-8d580dcaca10.json.tmp.63322.1755395469801",
+    "commands/push.md",
+    "commands/commit.md",
+    "commands/git-ship.md",
+    "_knowledge/01-Research/UI-Frameworks/react-ui-analysis-2025-08-16.md",
+    "_knowledge/01-Research/UI-Frameworks",
+    "todos/e27a5c42-e547-4962-8e82-0af4134128cb-agent-e27a5c42-e547-4962-8e82-0af4134128cb.json.tmp.32205.1755394771561",
+    "todos/abc2f9c2-12c8-424c-bce6-a3fceba5bae6-agent-abc2f9c2-12c8-424c-bce6-a3fceba5bae6.json",
+    "projects/-Users-kpessa-code-brain-space-nextjs/abc2f9c2-12c8-424c-bce6-a3fceba5bae6.jsonl",
+    "commands/analyze-ui-frameworks.md",
+    "todos/b586afbc-884e-4122-b87e-02df9723fb2e-agent-b586afbc-884e-4122-b87e-02df9723fb2e.json.tmp.44834.1755394004367",
+    "todos/b586afbc-884e-4122-b87e-02df9723fb2e-agent-b586afbc-884e-4122-b87e-02df9723fb2e.json.tmp.44834.1755393976304",
+    "_knowledge/04-Decisions/ADR-003-haiku-optimization-2025-08-16.md",
+    "_knowledge/04-Decisions/ADR-002-model-optimization-2025-08-16.md",
+    "commands/optimize-models.md",
+    "commands/update-models.md",
+    "_knowledge/04-Decisions/ADR-001-model-selection-strategy.md",
+    "_knowledge/01-Research/Database/patterns-2025-01-16.md",
+    "_knowledge/01-Research/React/hooks-patterns-2025-01-16.md",
+    "_knowledge/04-Decisions/ADR-Template.md",
+    "agents/archived/ios-optimizer.md",
+    "agents/ios-researcher.md",
+    "agents/archived/api-integration.md",
+    "agents/api-researcher.md",
+    "agents/archived/firebase-specialist.md",
+    "agents/firebase-researcher.md",
+    "agents/devops-researcher.md",
+    "agents/testing-researcher.md",
+    "agents/performance-researcher.md",
+    "agents/security-researcher.md",
+    "agents/database-researcher.md",
+    "_knowledge/01-Research/Agent-System-Deep-Dive-2024-01-16.md"
+  ]
+}

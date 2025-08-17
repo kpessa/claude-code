@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(chmod:*)",
+      "Bash(grep:*)",
+      "Bash(for:*)",
+      "Bash(do)",
+      "Bash(sed:*)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(if grep -q \"\\./.knowledge\" \"$file\")",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Bash(if [ -d \".knowledge\" ])",
+      "Bash(then mv .knowledge _knowledge)",
+      "Bash(else echo \"No .knowledge folder found to rename\")",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "WebSearch",
+      "WebFetch(domain:www.radix-ui.com)",
+      "WebFetch(domain:mui.com)",
+      "WebFetch(domain:ant.design)",
+      "WebFetch(domain:arco.design)"
+    ],
+    "deny": []
+  }
+}
