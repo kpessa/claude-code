@@ -24,7 +24,8 @@
       "WebFetch(domain:www.radix-ui.com)",
       "WebFetch(domain:mui.com)",
       "WebFetch(domain:ant.design)",
-      "WebFetch(domain:arco.design)"
+      "WebFetch(domain:arco.design)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
