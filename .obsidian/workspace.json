@@ -170,6 +170,10 @@
   },
   "active": "c438e03269edf30b",
   "lastOpenFiles": [
+    "todos/04208a7e-b972-4305-91dd-8d580dcaca10-agent-04208a7e-b972-4305-91dd-8d580dcaca10.json.tmp.63322.1755395916139",
+    "todos/abc2f9c2-12c8-424c-bce6-a3fceba5bae6-agent-abc2f9c2-12c8-424c-bce6-a3fceba5bae6.json.tmp.44834.1755395914449",
+    "commands/resume.md",
+    "todos/abc2f9c2-12c8-424c-bce6-a3fceba5bae6-agent-abc2f9c2-12c8-424c-bce6-a3fceba5bae6.json.tmp.44834.1755395808756",
     "projects/-Users-kpessa--claude/04208a7e-b972-4305-91dd-8d580dcaca10.jsonl",
     "shell-snapshots/snapshot-bash-1755395469800-bdf90v.sh",
     "todos/04208a7e-b972-4305-91dd-8d580dcaca10-agent-04208a7e-b972-4305-91dd-8d580dcaca10.json.tmp.63322.1755395470100",
@@ -182,10 +186,7 @@
     "_knowledge/01-Research/UI-Frameworks",
     "todos/e27a5c42-e547-4962-8e82-0af4134128cb-agent-e27a5c42-e547-4962-8e82-0af4134128cb.json.tmp.32205.1755394771561",
     "todos/abc2f9c2-12c8-424c-bce6-a3fceba5bae6-agent-abc2f9c2-12c8-424c-bce6-a3fceba5bae6.json",
-    "projects/-Users-kpessa-code-brain-space-nextjs/abc2f9c2-12c8-424c-bce6-a3fceba5bae6.jsonl",
     "commands/analyze-ui-frameworks.md",
-    "todos/b586afbc-884e-4122-b87e-02df9723fb2e-agent-b586afbc-884e-4122-b87e-02df9723fb2e.json.tmp.44834.1755394004367",
-    "todos/b586afbc-884e-4122-b87e-02df9723fb2e-agent-b586afbc-884e-4122-b87e-02df9723fb2e.json.tmp.44834.1755393976304",
     "_knowledge/04-Decisions/ADR-003-haiku-optimization-2025-08-16.md",
     "_knowledge/04-Decisions/ADR-002-model-optimization-2025-08-16.md",
     "commands/optimize-models.md",
@@ -204,7 +205,6 @@
     "agents/testing-researcher.md",
     "agents/performance-researcher.md",
     "agents/security-researcher.md",
-    "agents/database-researcher.md",
-    "_knowledge/01-Research/Agent-System-Deep-Dive-2024-01-16.md"
+    "agents/database-researcher.md"
   ]
 }
