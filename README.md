@@ -1,42 +1,70 @@
 # Claude Code User Settings & Agents
 
-This repository contains my personal Claude Code configurations and custom AI agents.
+This repository contains my centralized Claude Code configurations, custom AI agents, and global commands.
+
+## Centralized Strategy
+
+All agents and commands are maintained at the user level for consistency across all projects. See [CENTRALIZED-AGENTS.md](./CENTRALIZED-AGENTS.md) for details.
 
 ## Directory Structure
 
 ```
 ~/.claude/
-├── agents/                 # Custom AI agents (17 specialized agents)
-├── settings.local.json     # User permissions and settings
-└── README.md              # This file
+├── agents/                 # Centralized AI agents (28 specialized agents)
+│   ├── archived/          # Deprecated developer agents
+│   └── *.md              # Active agents (research-first approach)
+├── commands/              # Global slash commands
+│   ├── pr-review.md      # GitHub PR review
+│   ├── health-check.md   # Quick project health
+│   ├── audit.md          # Comprehensive analysis
+│   └── *.md              # Other commands
+├── _knowledge/           # Centralized knowledge base
+│   └── 01-Research/      # Research findings from agents
+├── settings.json         # Global model assignments
+├── settings.local.json   # User permissions
+└── README.md            # This file
 ```
 
-## Custom Agents Collection
+## Agent Categories (Research-First Approach)
 
-### Core Development (6 agents)
-- **debug-troubleshooter** - Systematic debugging and error tracing
-- **data-flow-architect** - Data flow mapping and architecture
-- **deployment-cicd** - Git workflows and Vercel deployment
-- **testing-qa** - Comprehensive testing strategies
-- **api-integration** - External service integrations
-- **performance-optimizer** - Performance bottleneck identification
+### Research Agents (Haiku Model - 95% cost savings)
+- **react-researcher** - React patterns and best practices
+- **svelte-researcher** - Svelte/SvelteKit documentation
+- **nextjs-researcher** - Next.js features and patterns
+- **firebase-researcher** - Firebase service patterns
+- **api-researcher** - API integration strategies
+- **ui-ux-researcher** - UI/UX patterns and accessibility
+- **styling-researcher** - CSS and styling strategies
+- **tailwind-researcher** - Tailwind CSS patterns
+- **component-library-researcher** - Component library analysis
+- **design-system-researcher** - Design system patterns
+- **database-researcher** - Database patterns and optimization
+- **testing-researcher** - Testing strategies and patterns
+- **security-researcher** - Security best practices
+- **performance-researcher** - Performance optimization patterns
+- **ios-researcher** - iOS/Safari optimization research
+- **refactor-researcher** - Code quality and refactoring analysis
+- **general-researcher** - General purpose research
 
-### Code Quality (2 agents)
-- **code-reviewer** - Code review and quality checks
-- **refactor-specialist** - Code refactoring and sustainability
+### Knowledge Management (Haiku Model)
+- **knowledge-curator** - Organizes research findings
+- **codebase-analyst** - Analyzes code structure
 
-### Framework Specialists (2 agents)
-- **react-developer** - React/Next.js development
-- **svelte-developer** - Svelte/SvelteKit development
+### Critical Reasoning (Opus Model)
+- **knowledge-synthesizer** - Complex reasoning and synthesis
+- **code-reviewer** - Code quality and security review
+- **debug-troubleshooter** - Complex problem solving
 
-### Specialized Technologies (2 agents)
-- **firebase-specialist** - Firebase services integration
-- **state-persistence-sync** - Offline-first and state sync
+### Development Support (Haiku Model)
+- **testing-qa** - Test implementation
+- **deployment-cicd** - Deployment and CI/CD
+- **performance-optimizer** - Performance tuning
+- **state-persistence-sync** - State management
 
-### UI/UX & Design (3 agents)
-- **ui-ux-accessibility** - WCAG compliance and accessibility
-- **ios-optimizer** - iOS/Safari optimization
-- **design-theming-specialist** - Design systems and theming
+### Archived (Moved to research-only)
+- Located in `agents/archived/`
+- Developer agents with Edit/MultiEdit capabilities
+- Replaced by research + main thread approach
 
 ## Usage
 
@@ -88,9 +116,11 @@ This repository serves as a backup of all custom Claude Code configurations. To 
 1. Clone this repository to `~/.claude/`
 2. Restart Claude Code
 
-## Created
+## Updates
 
-August 9, 2025 - Initial setup with 17 specialized agents for comprehensive development support.
+- August 17, 2025 - Centralized all agents at user level, research-first approach
+- August 16, 2025 - Optimized models (Haiku for research, Opus for critical)
+- August 9, 2025 - Initial setup with specialized agents
 
 ## License
 

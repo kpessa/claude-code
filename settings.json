@@ -6,12 +6,12 @@
     "general-researcher": "claude-3-5-haiku-20241104",
     "knowledge-curator": "claude-3-5-haiku-20241104",
     "codebase-analyst": "claude-3-5-haiku-20241104",
+    "refactor-researcher": "claude-3-5-haiku-20241104",
     
     "comment2": "Critical reasoning agents use Opus 4.1 ($15/$75 per M tokens)",
     "knowledge-synthesizer": "claude-opus-4-1-20250805",
     "code-reviewer": "claude-opus-4-1-20250805",
     "debug-troubleshooter": "claude-opus-4-1-20250805",
-    "refactor-specialist": "claude-opus-4-1-20250805",
     
     "comment3": "Development agents use Haiku 3.5 for routine tasks ($0.80/$4 per M tokens)",
     "testing-qa": "claude-3-5-haiku-20241104",
