@@ -1,17 +1,19 @@
 ---
-description: Progressively test webapp in dev mode, auto-fix issues, and ensure everything works
+description: Progressively test webapp in dev mode with transparent fixes and full visibility
 ---
 
-# Test - Progressive Testing Until Success
+# Test - Interactive Progressive Testing
 
-Run your webapp in development mode and progressively test functionality, automatically fixing common issues until everything works. Creates missing tests if needed.
+Run your webapp in development mode and progressively test functionality with full visibility into what's being tested and fixed. All fixes happen on the main thread with your approval.
 
 ## Usage:
-- `/test` - Full progressive testing
-- `/test --create-tests` - Generate missing tests
-- `/test --level=3` - Test up to specific level
-- `/test --fix-mode` - Aggressive auto-fixing
+- `/test` - Interactive testing with prompts (default)
+- `/test --auto-fix` - Apply fixes without prompting (except destructive)
+- `/test --dry-run` - Show what would be fixed without applying
+- `/test --verbose` - Show detailed output for debugging
+- `/test --level=3` - Test up to specific level only
 - `/test --skip-e2e` - Skip E2E tests (faster)
+- `/test --create-tests` - Generate missing test files
 
 ## Progressive Testing Levels:
 
@@ -40,342 +42,480 @@ Run your webapp in development mode and progressively test functionality, automa
 - Integration tests pass
 - E2E tests pass (if available)
 
-## Workflow Instructions:
+## Interactive Testing Workflow:
 
-### Phase 1: Project Detection
+### Phase 1: Project Detection (Transparent)
 
-```bash
-# Detect project type
-if [ -f "next.config.js" ] || [ -f "next.config.ts" ]; then
-  PROJECT_TYPE="nextjs"
-elif [ -f "svelte.config.js" ]; then
-  PROJECT_TYPE="svelte"
-elif [ -f "vite.config.js" ] || [ -f "vite.config.ts" ]; then
-  PROJECT_TYPE="vite"
-elif [ -f "package.json" ]; then
-  # Check package.json for framework
-  grep -q '"react"' package.json && PROJECT_TYPE="react"
-fi
-
-# Detect test runner
-if [ -f "playwright.config.ts" ] || [ -f "playwright.config.js" ]; then
-  TEST_RUNNER="playwright"
-elif [ -f "vitest.config.ts" ] || [ -f "vitest.config.js" ]; then
-  TEST_RUNNER="vitest"
-elif grep -q '"jest"' package.json 2>/dev/null; then
-  TEST_RUNNER="jest"
-else
-  TEST_RUNNER="none"
-fi
-
-echo "Detected: $PROJECT_TYPE with $TEST_RUNNER"
+```
+🔍 Analyzing project structure...
+   ✓ Found: next.config.js (Next.js project)
+   ✓ Found: playwright.config.ts (Playwright tests)
+   ✓ Found: package.json scripts
+   
+📊 Project Summary:
+   Framework: Next.js 14 (App Router)
+   Test Runner: Playwright
+   Dev Command: npm run dev
+   Test Command: npm test
 ```
 
-### Phase 2: Start Dev Server with Error Handling
+### Phase 2: Start Dev Server (Interactive)
 
-```bash
-# Kill any existing process on the port
-PORT=${PORT:-3000}
-lsof -ti:$PORT | xargs kill -9 2>/dev/null
+```
+🚀 Starting development server...
 
-# Try to start dev server
-echo "Starting development server..."
-npm run dev &
-DEV_PID=$!
+⚠️  Port 3000 is already in use
+   Process: node (PID: 12345)
+   
+➡️  Kill existing process and continue? [Y/n]: Y
+   ✓ Killed process on port 3000
 
-# Wait for server to be ready (with timeout)
-MAX_WAIT=30
-WAITED=0
-while ! curl -s http://localhost:$PORT > /dev/null; do
-  if [ $WAITED -ge $MAX_WAIT ]; then
-    echo "❌ Server failed to start in $MAX_WAIT seconds"
-    # Try to fix common issues
-    npm install
-    rm -rf .next node_modules/.cache
-    npm run dev &
-    DEV_PID=$!
-  fi
-  sleep 1
-  WAITED=$((WAITED + 1))
-done
+📦 Checking dependencies...
+   ✓ All dependencies installed
 
-echo "✅ Dev server running on port $PORT"
+🔄 Starting server...
+   $ npm run dev
+   
+   > my-app@0.1.0 dev
+   > next dev
+   
+   ✓ Ready on http://localhost:3000
+
+✅ Dev server is running!
 ```
 
-### Phase 3: Progressive Testing
+### Phase 3: Progressive Testing (Interactive)
 
 #### Level 1: Server Health Check
-```bash
-# Check if server responds
-curl -f http://localhost:$PORT > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  echo "✅ Level 1: Server is healthy"
-else
-  echo "❌ Level 1: Server not responding"
-  # Auto-fix attempts
-  npm install
-  npm run build
-  exit 1
-fi
+```
+🧪 LEVEL 1: Server Health Check
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Testing server response...
+   GET http://localhost:3000
+   
+   ✓ Server responded (200 OK)
+   ✓ Response time: 145ms
+   
+✅ Level 1 PASSED - Server is healthy
+```
+
+If server fails:
+```
+❌ Server not responding
+
+🔍 Detected issue: Connection refused
+💡 Suggested fixes:
+   1. Restart dev server
+   2. Clear build cache
+   3. Reinstall dependencies
+   
+➡️  Apply fix #1? [Y/n/skip]: 
 ```
 
 #### Level 2: Basic Functionality
-```javascript
-// Check for console errors and page load
-const checkBasicFunctionality = async () => {
-  const browser = await playwright.chromium.launch();
-  const page = await browser.newPage();
-  
-  const errors = [];
-  page.on('console', msg => {
-    if (msg.type() === 'error') errors.push(msg.text());
-  });
-  
-  try {
-    const response = await page.goto(`http://localhost:${PORT}`);
-    
-    if (response.status() !== 200) {
-      throw new Error(`Homepage returned ${response.status()}`);
-    }
-    
-    if (errors.length > 0) {
-      console.log('Console errors found:', errors);
-      // Attempt to fix common errors
-    }
-    
-    console.log('✅ Level 2: Basic functionality working');
-  } catch (error) {
-    console.log('❌ Level 2:', error.message);
-  }
-  
-  await browser.close();
-};
+```
+🧪 LEVEL 2: Basic Functionality
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Loading homepage...
+   ✓ Page loaded successfully
+   ✓ Title: "My App"
+   
+🔍 Checking for console errors...
+   ⚠️ Found 2 console errors:
+   
+   1. "Failed to load resource: 404 /favicon.ico"
+   2. "Warning: Each child should have unique key prop"
+   
+💡 Suggested fixes:
+   1. Add missing favicon.ico
+   2. Fix React key warnings in components
+   
+➡️  Apply fixes? [Y/n/skip]: n
+   ⚠️ Continuing with warnings
+   
+✅ Level 2 PASSED (with warnings)
 ```
 
 #### Level 3: Route Testing
-```javascript
-// Test all routes
-const testRoutes = async () => {
-  const routes = [
-    '/',
-    '/about',
-    '/api/health',
-    // Add detected routes
-  ];
-  
-  for (const route of routes) {
-    const response = await fetch(`http://localhost:${PORT}${route}`);
-    if (response.status === 404) {
-      console.log(`❌ Route ${route} not found`);
-    }
-  }
-};
+```
+🧪 LEVEL 3: Routes & Navigation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Detecting routes from codebase...
+   Found 5 routes:
+   • / (homepage)
+   • /about
+   • /dashboard
+   • /api/health
+   • /api/users
+   
+🔍 Testing each route...
+   ✓ / .............. 200 OK (125ms)
+   ✓ /about ......... 200 OK (89ms)
+   ❌ /dashboard ..... 401 Unauthorized
+   ✓ /api/health .... 200 OK (12ms)
+   ❌ /api/users ..... 500 Internal Error
+   
+🔍 Found 2 failing routes
+
+💡 Issue 1: /dashboard returns 401
+   Cause: Missing authentication
+   Fix: Add auth middleware bypass for testing
+   
+💡 Issue 2: /api/users returns 500
+   Cause: Database connection error
+   Fix: Set up test database
+   
+➡️  View detailed errors? [y/N]: 
+➡️  Continue testing? [Y/n]: Y
+
+⚠️ Level 3 PASSED with issues (3/5 routes working)
 ```
 
 #### Level 4: API & Data Testing
-```javascript
-// Test API endpoints
-const testAPI = async () => {
-  // Test health endpoint
-  const health = await fetch(`http://localhost:${PORT}/api/health`);
-  if (!health.ok) {
-    // Create health endpoint if missing
-    createHealthEndpoint();
-  }
-  
-  // Test database connection
-  // Test auth flow
-  // etc.
-};
+```
+🧪 LEVEL 4: API & Data
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Testing API endpoints...
+   ✓ /api/health ... Response: {"status":"healthy"}
+   ✗ /api/users .... Error: ECONNREFUSED
+   
+🔍 Checking database connection...
+   ✗ Database unreachable
+   
+💡 Detected issues:
+   1. Database not running
+   2. Missing DB environment variables
+   
+   Would you like to:
+   [1] Start local database
+   [2] Use in-memory database for testing
+   [3] Skip database tests
+   
+➡️  Choice [1/2/3]: 2
+   ✓ Configured in-memory test database
+   ✓ Retrying API tests...
+   ✓ All API endpoints working
+   
+✅ Level 4 PASSED (with test database)
 ```
 
-#### Level 5: Run Test Suite
-```bash
-# Run tests based on detected runner
-case $TEST_RUNNER in
-  "jest")
-    npm test -- --passWithNoTests || handle_test_failure
-    ;;
-  "vitest")
-    npm run test || handle_test_failure
-    ;;
-  "playwright")
-    npx playwright test || handle_test_failure
-    ;;
-  "none")
-    echo "No test runner found. Creating basic tests..."
-    create_basic_tests
-    ;;
-esac
+#### Level 5: Full Test Suite
+```
+🧪 LEVEL 5: Full Test Suite
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Found test runner: Playwright
+
+📦 Running test suite...
+   $ npx playwright test
+   
+   Running 15 tests using 3 workers
+   
+   [1/15] ✓ homepage loads without errors (1.2s)
+   [2/15] ✓ navigation works (0.8s)
+   [3/15] ✗ user login flow (2.1s)
+   [4/15] ✓ API health check (0.3s)
+   ...
+   
+   12 passed, 3 failed
+   
+💡 Test failures detected:
+
+   1. user login flow
+      Error: Timeout waiting for selector "#login-button"
+      Fix: Update test selector or add data-testid
+      
+   2. checkout process
+      Error: Expected price "$99" but got "$0"
+      Fix: Mock API response in test
+      
+   3. mobile responsive
+      Error: Menu not visible on mobile
+      Fix: Add mobile menu component
+      
+➡️  Auto-fix test issues? [y/N]: y
+
+🔧 Applying fixes...
+   ✓ Updated test selectors
+   ✓ Added API mocks
+   ✓ Fixed mobile menu visibility
+   
+🔄 Re-running failed tests...
+   ✓ All tests passing (15/15)
+   
+✅ Level 5 PASSED - All tests successful!
 ```
 
-### Phase 4: Create Missing Tests
+### Phase 4: Interactive Fix Application
 
-If no tests exist, create basic ones:
+When issues are detected, the command will:
 
-#### Basic Smoke Test
-Create `tests/smoke.test.js`:
-```javascript
-describe('Smoke Tests', () => {
-  test('development server is accessible', async () => {
-    const response = await fetch('http://localhost:3000');
-    expect(response.status).toBe(200);
-  });
+1. **Show the issue clearly**
+   ```
+   🔍 Detected: Missing dependency 'axios'
+   ```
 
-  test('health check endpoint works', async () => {
-    const response = await fetch('http://localhost:3000/api/health');
-    const data = await response.json();
-    expect(data.status).toBe('healthy');
-  });
-});
-```
+2. **Explain the fix**
+   ```
+   💡 Fix: Install axios package
+      Command: npm install axios
+   ```
 
-#### Health Endpoint (Next.js App Router)
-Create `app/api/health/route.ts`:
-```typescript
-export async function GET() {
-  // Basic health check
-  const checks = {
-    server: 'healthy',
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-  };
+3. **Ask for confirmation** (unless --auto-fix)
+   ```
+   ➡️  Apply this fix? [Y/n]: 
+   ```
 
-  // Add database check if applicable
-  try {
-    // await db.query('SELECT 1');
-    // checks.database = 'healthy';
-  } catch (error) {
-    // checks.database = 'unhealthy';
-  }
+4. **Show progress**
+   ```
+   🔧 Installing axios...
+      added 5 packages in 2.341s
+   ✓ Fix applied successfully
+   ```
 
-  return Response.json(checks);
-}
-```
+5. **Verify the fix**
+   ```
+   🔄 Re-testing...
+   ✓ Issue resolved
+   ```
 
-#### Playwright Test
-Create `tests/app.spec.ts`:
-```typescript
-import { test, expect } from '@playwright/test';
-
-test.describe('App Basic Tests', () => {
-  test('homepage loads without errors', async ({ page }) => {
-    const errors: string[] = [];
-    
-    // Capture console errors
-    page.on('console', msg => {
-      if (msg.type() === 'error') {
-        errors.push(msg.text());
-      }
-    });
-
-    // Navigate to homepage
-    await page.goto('/');
-    
-    // Check for errors
-    expect(errors).toHaveLength(0);
-    
-    // Check page loaded
-    await expect(page).toHaveTitle(/.+/);
-  });
-
-  test('navigation works', async ({ page }) => {
-    await page.goto('/');
-    
-    // Test navigation if nav exists
-    const links = await page.locator('nav a').all();
-    for (const link of links) {
-      const href = await link.getAttribute('href');
-      if (href && href.startsWith('/')) {
-        await link.click();
-        await expect(page).toHaveURL(new RegExp(href));
-        // Go back for next test
-        await page.goto('/');
-      }
-    }
-  });
-});
-```
-
-### Phase 5: Auto-Fix Common Issues
+### Phase 5: Common Fix Patterns
 
 #### Missing Dependencies
-```bash
-# Check for missing dependencies in errors
-if grep -q "Cannot find module" error.log; then
-  MODULE=$(grep "Cannot find module" error.log | sed -n "s/.*'\(.*\)'.*/\1/p")
-  npm install $MODULE
-fi
 ```
-
-#### Type Errors
-```bash
-# Fix type errors
-if npm run type-check 2>&1 | grep -q "error TS"; then
-  echo "Type errors found. Attempting fixes..."
-  # Add @ts-ignore for quick fix (document for later proper fix)
-  # Or install missing @types packages
-fi
+🔍 Issue: Cannot find module 'lodash'
+💡 Fix: npm install lodash
+➡️  Apply? [Y/n]: Y
 ```
 
 #### Port Conflicts
-```bash
-# Find available port
-for PORT in {3000..3010}; do
-  if ! lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null; then
-    echo "Using port $PORT"
-    break
-  fi
-done
+```
+🔍 Issue: Port 3000 already in use
+💡 Options:
+   [1] Kill process on port 3000
+   [2] Use different port (3001)
+   [3] Cancel
+➡️  Choice [1/2/3]: 1
 ```
 
-#### Build Cache Issues
+#### Type Errors
+```
+🔍 Issue: TypeScript errors (5 errors)
+💡 Fixes available:
+   ✓ Add missing type definitions
+   ✓ Fix incorrect types
+   ✓ Add @ts-ignore (quick fix)
+➡️  Apply all fixes? [Y/n/select]: 
+```
+
+#### Build/Cache Issues  
+```
+🔍 Issue: Build failed - stale cache
+💡 Fix: Clear build caches
+   • .next/
+   • node_modules/.cache/
+   • dist/
+➡️  Clear caches and rebuild? [Y/n]: Y
+```
+
+### Command Line Arguments
+
+#### --auto-fix
+Automatically apply non-destructive fixes:
 ```bash
-# Clear various caches
-rm -rf .next .svelte-kit .vite node_modules/.cache
-rm -rf dist build out
+/test --auto-fix
+
+# Will auto-apply:
+✓ Install missing dependencies
+✓ Clear caches
+✓ Fix lint errors
+✓ Update import paths
+
+# Will still prompt for:
+⚠️ Deleting files
+⚠️ Database migrations
+⚠️ Breaking changes
+```
+
+#### --dry-run  
+Show what would be fixed without applying:
+```bash
+/test --dry-run
+
+🔍 Dry run mode - no changes will be made
+
+ Would fix:
+ • Install axios
+ • Clear .next cache
+ • Add missing favicon.ico
+ • Fix 3 TypeScript errors
+```
+
+#### --verbose
+Show detailed output for debugging:
+```bash
+/test --verbose
+
+[DEBUG] Starting server on port 3000
+[DEBUG] Server PID: 12345
+[DEBUG] Waiting for server ready...
+[DEBUG] Server responded after 1.2s
+[DEBUG] Running health check...
+```
+
+### Batch Fix Mode
+
+When multiple similar issues are found:
+
+```
+🔍 Found 5 similar issues:
+
+📦 Missing dependencies:
+   1. axios
+   2. lodash
+   3. date-fns
+   4. uuid
+   5. classnames
+   
+➡️  Install all missing dependencies? [Y/n/select]: Y
+
+🔧 Installing 5 packages...
+   ✓ axios@1.6.0
+   ✓ lodash@4.17.21
+   ✓ date-fns@3.0.0
+   ✓ uuid@9.0.1
+   ✓ classnames@2.3.2
+   
+✅ All dependencies installed
+```
+
+### Smart Fix Suggestions
+
+The test command learns from your project:
+
+```
+🤖 Based on your project patterns:
+   • You use Tailwind for styling
+   • You prefer named exports
+   • You use async/await over promises
+   
+   Suggested fix will follow these patterns.
 ```
 
 ## Error Recovery Strategies:
 
-### Common Error Patterns:
-- `EADDRINUSE` → Kill process on port
-- `Cannot find module` → Install missing package
-- `TypeError` → Check for undefined variables
-- `ECONNREFUSED` → Start required services (DB, Redis)
-- Memory issues → `NODE_OPTIONS="--max-old-space-size=4096"`
+### Intelligent Error Detection
+
+The command recognizes common patterns:
+
+| Error | Detection | Fix Strategy |
+|-------|-----------|-------------|
+| `EADDRINUSE` | Port in use | Kill process or use alt port |
+| `Cannot find module` | Missing dep | Install package |
+| `TypeError: Cannot read` | Null reference | Add null checks |
+| `ECONNREFUSED` | Service down | Start service or mock |
+| `ENOMEM` | Out of memory | Increase heap size |
+| `404 on /favicon.ico` | Missing file | Create or ignore |
+| React key warnings | Missing keys | Add unique keys |
+| Hydration mismatch | SSR issue | Fix initial state |
 
 ## Success Output:
 
 ```
-🧪 Test Dev Report
-==================
-✅ Level 1: Server Health - PASSED
-✅ Level 2: Basic Functionality - PASSED
-✅ Level 3: Routes & Navigation - PASSED
-✅ Level 4: API & Data - PASSED
-✅ Level 5: Test Suite - PASSED (15/15 tests)
+🧪 Test Report
+════════════════════════════════════════
+
+✅ Level 1: Server Health ........ PASSED
+✅ Level 2: Basic Functionality ... PASSED 
+⚠️  Level 3: Routes & Navigation .. PASSED (with 2 warnings)
+✅ Level 4: API & Data ............ PASSED
+✅ Level 5: Test Suite ............ PASSED (15/15 tests)
+
+📈 Metrics:
+   • Server Start Time: 2.1s
+   • Page Load Time: 245ms  
+   • Test Coverage: 76%
+   • Bundle Size: 287kb
+   
+🔧 Fixes Applied:
+   • Installed 3 missing dependencies
+   • Fixed 5 TypeScript errors
+   • Created health endpoint
+   • Cleared build cache
 
 🚀 Development server running at http://localhost:3000
-📊 Test Coverage: 76%
-⚡ Page Load Time: 245ms
 
-All systems operational! Happy coding! 🎉
+✅ All systems operational!
 ```
 
 ## Integration with Your Workflow:
 
-1. **Before commits**: `/test && /commit`
-2. **After pulling**: `/test` to ensure everything works
-3. **When debugging**: `/test --level=3` to isolate issues
-4. **Starting work**: `/resume && /test`
+### Quick Commands
+```bash
+# Full interactive test
+/test
+
+# Fast auto-fix mode
+/test --auto-fix
+
+# Check without changes
+/test --dry-run
+
+# Test specific level
+/test --level=3
+
+# Skip slow E2E tests
+/test --skip-e2e
+```
+
+### Workflow Combinations
+```bash
+# Before shipping code
+/test --auto-fix && /commit && /push
+
+# After pulling changes  
+/pull && /test
+
+# Start of work session
+/resume && /test --level=2
+
+# Debugging specific issue
+/test --verbose --level=3
+```
+
+## Interactive Features:
+
+### Smart Prompting
+- **Y/n** - Yes by default (just press Enter)
+- **y/N** - No by default
+- **[1/2/3]** - Choose numbered option
+- **[Y/n/select]** - Select individual items
+- **[skip]** - Skip this fix, continue testing
+
+### Safety Features
+- 🛡️ Never deletes code without confirmation
+- 🔒 Backs up files before major changes
+- ⚠️  Warns about breaking changes
+- 🔄 Can undo last fix with `/test --undo`
+
+### Progress Indicators
+- 🔍 Analyzing...
+- 🔧 Fixing...
+- 🔄 Retrying...
+- ✓ Success
+- ✗ Failed
+- ⚠️ Warning
 
 ## Notes:
 
-- Tests are progressive - failure at one level stops testing
-- Auto-fixes are non-destructive (cache clearing, installs)
-- Creates minimal tests if none exist
-- Keeps dev server running if all tests pass
-- Integrates with your existing test runners
+- Full transparency - see every test and fix
+- Interactive by default, automated with flags
+- Non-destructive fixes unless confirmed
+- Learns from your project patterns
+- Keeps server running after success
 
 $ARGUMENTS
