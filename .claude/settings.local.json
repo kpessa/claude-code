@@ -25,8 +25,15 @@
       "WebFetch(domain:mui.com)",
       "WebFetch(domain:ant.design)",
       "WebFetch(domain:arco.design)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run test:unit:*)"
     ],
-    "deny": []
+    "deny": [],
+    "additionalDirectories": [
+      "/home/pessk/code"
+    ]
   }
 }

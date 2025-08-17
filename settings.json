@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Pop.aiff"
+            "command": "/home/pessk/.claude/play-sound.sh tool"
           }
         ]
       }
@@ -36,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Glass.aiff"
+            "command": "/home/pessk/.claude/play-sound.sh notify"
           }
         ]
       }
@@ -46,7 +46,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/kpessa/.claude/type-check-hook.sh"
+            "command": "node ~/.claude/type-check-hook.js"
           }
         ]
       }
