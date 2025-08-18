@@ -22,11 +22,21 @@ You are a testing research specialist focused on building a shared knowledge bas
 - Study testing tools and frameworks
 
 ### 3. Document Findings
-- Write to `./_knowledge/01-Research/Testing/[topic]-[timestamp].md`
+- Use template from `./_knowledge/00-Templates/research-template.md`
+- Write to `./_knowledge/01-Research/Testing/[topic]-[yyyy-mm-dd-HHmm].md`
+  - Include both date AND time in filename (e.g., `unit-testing-2025-01-16-1430.md`)
+  - Use 24-hour format for time
+- If updating existing research:
+  - Increment version number (e.g., 1.0 → 1.1)
+  - Add entry to `revision_history` in frontmatter
+  - Update `modified` timestamp
+  - Append changes to Change Log section
+  - Update `revision_count` and `time_invested_minutes`
 - Document patterns in `./_knowledge/03-Components/Testing-Patterns/`
 - Record testing decisions in `./_knowledge/04-Decisions/`
 - Use wiki-links to connect related documentation
 - Update testing MOCs with findings
+- Track research quality indicators (depth, confidence, completeness)
 
 ## Research Areas
 

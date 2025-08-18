@@ -27,35 +27,70 @@ Use the **testing-researcher** agent to:
 - Analyze test suite health and coverage
 - Identify missing test scenarios
 - Evaluate test framework usage and patterns
-- Document findings in `_knowledge/01-Research/Testing/AUDIT-{date}.md`
+- Check for mobile device testing coverage
+- Assess iOS Safari-specific test cases
+- Review touch interaction and gesture testing
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document findings in `_knowledge/01-Research/Testing/audit-{yyyy-mm-dd-HHmm}.md`
+- Include revision history if updating existing audit research
 
 ### Technical Debt Assessment
 Use the **refactor-researcher** agent to:
 - Identify code duplication and complexity
 - Find outdated patterns and deprecated code
 - Analyze TypeScript/build issues
-- Document findings in `_knowledge/01-Research/Refactoring/AUDIT-{date}.md`
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document findings in `_knowledge/01-Research/Refactoring/audit-{yyyy-mm-dd-HHmm}.md`
+- Track time invested and confidence level
 
 ### Performance Analysis
 Use the **performance-researcher** agent to:
 - Identify performance bottlenecks
 - Analyze bundle sizes and load times
 - Find inefficient algorithms and data structures
-- Document findings in `_knowledge/01-Research/Performance/AUDIT-{date}.md`
+- Measure mobile performance on 3G/4G networks
+- Assess First Input Delay and touch responsiveness
+- Check for iOS Safari-specific performance issues
+- Evaluate battery usage patterns on mobile
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document findings in `_knowledge/01-Research/Performance/audit-{yyyy-mm-dd-HHmm}.md`
+- Include benchmarks and metrics in the Data & Evidence section
 
 ### Security Audit
 Use the **security-researcher** agent to:
 - Check for security vulnerabilities
 - Review authentication and authorization patterns
 - Identify exposed secrets or unsafe operations
-- Document findings in `_knowledge/01-Research/Security/AUDIT-{date}.md`
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document findings in `_knowledge/01-Research/Security/audit-{yyyy-mm-dd-HHmm}.md`
+- Mark confidence level and research depth
 
 ### UI/UX Patterns Review
 Use the **ui-ux-researcher** agent to:
 - Analyze component organization and reusability
 - Review accessibility compliance
 - Identify UI consistency issues
-- Document findings in `_knowledge/01-Research/UI-UX/AUDIT-{date}.md`
+- Assess mobile responsiveness and touch UX
+- Evaluate touch target sizes (minimum 44x44px)
+- Check viewport configuration and mobile layouts
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document findings in `_knowledge/01-Research/UI-UX/audit-{yyyy-mm-dd-HHmm}.md`
+- Create knowledge graph connections to related patterns
+
+### iOS PWA & Mobile Analysis
+Use the **ios-researcher** agent to:
+- Assess PWA readiness and capabilities on iOS Safari
+- Analyze viewport handling and safe area implementation
+- Evaluate touch interactions and gesture support
+- Check Web App Manifest configuration
+- Test home screen installation experience
+- Identify iOS-specific performance patterns
+- Review Safari WebKit compatibility issues
+- Analyze offline functionality and service worker support
+- Evaluate mobile Core Web Vitals (LCP, FID, CLS)
+- Use template from `_knowledge/00-Templates/mobile-audit-template.md`
+- Document findings in `_knowledge/01-Research/iOS/audit-{yyyy-mm-dd-HHmm}.md`
+- Include PWA feature support matrix and iOS version compatibility
 
 ## Phase 3: Deep Architecture Analysis
 
@@ -65,14 +100,18 @@ Use the **codebase-analyst** agent to:
 - Identify architectural patterns and anti-patterns
 - Analyze module coupling and cohesion
 - Create architecture diagrams and documentation
-- Write comprehensive analysis to `_knowledge/02-Architecture/AUDIT-{date}.md`
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Write comprehensive analysis to `_knowledge/02-Architecture/audit-{yyyy-mm-dd-HHmm}.md`
+- Update revision history if this is a follow-up audit
 
 ### Data Flow Analysis
 Use the **data-flow-researcher** agent to:
 - Map data flow through the application
 - Identify state management patterns
 - Analyze API integration points
-- Document data architecture in `_knowledge/03-Data-Flow/AUDIT-{date}.md`
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Document data architecture in `_knowledge/03-Data-Flow/audit-{yyyy-mm-dd-HHmm}.md`
+- Include mermaid diagrams in Knowledge Graph Connections
 
 ## Phase 4: Framework-Specific Analysis (if applicable)
 
@@ -93,7 +132,10 @@ Use the **knowledge-synthesizer** agent to:
 - Identify cross-cutting concerns
 - Prioritize issues by impact on development velocity
 - Generate executive summary
-- Create `_knowledge/06-Reviews/COMPREHENSIVE-AUDIT-{date}.md`
+- Use template from `_knowledge/00-Templates/research-template.md`
+- Create `_knowledge/06-Reviews/comprehensive-audit-{yyyy-mm-dd-HHmm}.md`
+- Include cumulative time invested across all research
+- Link to all component research documents in Related Research section
 
 ## Phase 6: Knowledge Base Organization
 
@@ -163,6 +205,10 @@ Generated by comprehensive audit on {date}
 - **Test Coverage**: {percentage}%
 - **Bundle Size**: {size}KB
 - **Critical Issues**: {P0_count} P0, {P1_count} P1
+- **PWA Readiness**: {score}/100
+- **iOS Safari Compatibility**: ✅ Full / ⚠️ Partial / ❌ Issues
+- **Mobile Performance Score**: {score}/100
+- **Touch Target Compliance**: {percentage}%
 
 ### Critical Issues Requiring Immediate Attention
 #### P0 - Blocking Development
@@ -170,6 +216,29 @@ Generated by comprehensive audit on {date}
    - Location: `path/to/file.ts:line`
    - Impact: {description}
    - Recommended Fix: {action}
+
+### Mobile & PWA Status
+#### iOS Safari Compatibility
+- **Overall Status**: ✅ Excellent / ⚠️ Good with Issues / ❌ Major Problems
+- **PWA Installable**: Yes/No
+- **Offline Support**: Full/Partial/None
+- **Critical iOS Issues**: {list}
+
+#### Mobile Performance
+- **Load Time on 4G**: {seconds}s
+- **First Input Delay**: {ms}ms
+- **Touch Response**: {ms}ms
+- **Lighthouse Mobile Score**: {score}/100
+
+#### PWA Checklist
+- [ ] Web App Manifest configured
+- [ ] Service Worker implemented
+- [ ] HTTPS enabled
+- [ ] Responsive viewport meta tag
+- [ ] Apple touch icons configured
+- [ ] iOS splash screens defined
+- [ ] Offline fallback page
+- [ ] App shell architecture
 
 [Additional sections...]
 ```
@@ -189,21 +258,50 @@ The final audit report will include:
   - Issues preventing builds or deployments
   - Security vulnerabilities
   - Major performance problems
+  - App completely broken on iOS Safari
 
 - **P1 - High** (Significant velocity impact)
   - Technical debt slowing development
   - Missing critical tests
   - Architecture issues
+  - Critical mobile UX problems (unusable on iPhone)
 
 - **P2 - Medium** (Quality improvements)
   - Code organization issues
   - Minor performance optimizations
   - UI/UX inconsistencies
+  - Missing PWA features (offline, install)
 
 - **P3 - Low** (Nice to have)
   - Documentation gaps
   - Style improvements
   - Minor refactoring opportunities
+  - Mobile enhancements (animations, polish)
+
+### Mobile-Specific Priority Matrix
+- **M0 - Critical** (App unusable on iOS)
+  - Broken viewport configuration
+  - No touch event support
+  - Complete layout failure on mobile
+  - iOS Safari crashes or hangs
+
+- **M1 - High** (Poor mobile experience)
+  - Touch targets too small (<44px)
+  - Slow touch interactions (>100ms delay)
+  - Horizontal scrolling issues
+  - Fixed positioning problems
+
+- **M2 - Medium** (Missing mobile features)
+  - No offline support
+  - Cannot install as PWA
+  - Missing mobile optimizations
+  - Poor performance on cellular
+
+- **M3 - Low** (Mobile polish)
+  - Missing touch gestures
+  - No haptic feedback
+  - Suboptimal animations
+  - Battery drain issues
 
 ### Each Finding Includes:
 - Problem description with specific examples
@@ -212,6 +310,9 @@ The final audit report will include:
 - Specific file locations and line numbers
 - Recommended solution with implementation steps
 - Links to relevant research in knowledge base
+- Device/OS impact for mobile issues (iPhone models, iOS versions)
+- Safari-specific workarounds when applicable
+- PWA feature support status
 
 ## Benefits of Agent-Based Audit
 
