@@ -22,6 +22,7 @@ Thumbs.db
 # Sensitive or personal data
 *.secret
 *.private
+.credentials.json
 
 # Cache directories
 cache/
