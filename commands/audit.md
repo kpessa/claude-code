@@ -10,6 +10,14 @@ Orchestrating specialized research agents to perform deep codebase analysis and 
 ## Overview
 This audit leverages multiple specialized research agents running in parallel to analyze different aspects of your codebase. Each agent writes findings to the knowledge base for persistent learning.
 
+## 🚀 Parallel Execution Instructions
+
+**CRITICAL**: For optimal performance, agents MUST be launched in parallel. This means:
+1. Create the todo list first
+2. Then launch ALL Phase 2 agents in a SINGLE message with multiple Task tool calls
+3. Do NOT wait for one agent to complete before launching the next
+4. All agents should run simultaneously to maximize efficiency
+
 ## Phase 1: Initialize Audit Tracking
 
 Create a todo list to track the audit phases:
@@ -18,9 +26,11 @@ Create a todo list to track the audit phases:
 3. Synthesize findings across all agents
 4. Update knowledge base with comprehensive review
 
+**Execution Note**: When launching agents in Phase 2, you MUST call the Task tool multiple times in a SINGLE message to ensure parallel execution. Do NOT launch agents one at a time in separate messages.
+
 ## Phase 2: Parallel Research Tasks (Cost-Optimized with Haiku)
 
-Launch the following research agents in parallel for comprehensive analysis:
+**IMPORTANT**: Launch ALL the following research agents IN PARALLEL using a single message with multiple Task tool invocations. This maximizes performance by running all agents simultaneously:
 
 ### Testing & Quality Analysis
 Use the **testing-researcher** agent to:
@@ -91,6 +101,38 @@ Use the **ios-researcher** agent to:
 - Use template from `_knowledge/00-Templates/mobile-audit-template.md`
 - Document findings in `_knowledge/01-Research/iOS/audit-{yyyy-mm-dd-HHmm}.md`
 - Include PWA feature support matrix and iOS version compatibility
+
+## 📋 Parallel Execution Example
+
+When executing Phase 2, launch all agents like this in a SINGLE message:
+
+```
+Using Task tool (1st invocation):
+- subagent_type: testing-researcher
+- prompt: "Analyze test suite health..."
+
+Using Task tool (2nd invocation):
+- subagent_type: refactor-researcher  
+- prompt: "Identify technical debt..."
+
+Using Task tool (3rd invocation):
+- subagent_type: performance-researcher
+- prompt: "Analyze performance bottlenecks..."
+
+Using Task tool (4th invocation):
+- subagent_type: security-researcher
+- prompt: "Check for security vulnerabilities..."
+
+Using Task tool (5th invocation):
+- subagent_type: ui-ux-researcher
+- prompt: "Analyze UI/UX patterns..."
+
+Using Task tool (6th invocation):
+- subagent_type: ios-researcher
+- prompt: "Assess iOS PWA capabilities..."
+```
+
+All these Task invocations should be in ONE message for parallel execution!
 
 ## Phase 3: Deep Architecture Analysis
 
